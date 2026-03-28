@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensando em você...</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 300px;
+            width: 90%;
+        }
+
+        h2 {
+            color: #ff4d6d;
+            margin-bottom: 20px;
+        }
+
+        #frase {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            min-height: 80px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            background: #ff4d6d;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background: #ff758f;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Para você 🌸</h2>
+        <p id="frase">Clique no botão para saber o que estou pensando agora...</p>
+
+        <button onclick="gerar()">Ver Pensamento</button>
+    </div>
+
+    <script>
+        const frases = [
+            "Deveria estar estudando agora, mas confesso que você é uma distração muito melhor. 📚✨",
+            "Seu sorriso ganha de qualquer coisa que eu tente fazer hoje. 😊",
+            "Passando aqui só para lembrar que o meu 'pensamento do dia' tem nome, sobrenome e um sorriso lindo.",
+            "Independentemente do nosso 'status' atual, saiba que meu dia fica 100% melhor quando falo com você. ⏳❤️",
+            "Dizem que o tempo voa, mas quando estou com você, eu nem sinto ele passar. 🎈",
+            "Tem coisas que não precisam de explicação, só de um tempo pra acontecer. 🕰️✨",
+            "Só passando pra dizer que meu dia fica bem mais colorido quando você aparece. 🎨",
+            "Não importa o nome que a gente dê pra isso, o importante é que eu gosto de cada minuto. ❤️"
+        ];
+
+        function gerar() {
+            const display = document.getElementById('frase');
+            let novaFrase;
+
+            // Lógica para não repetir a mesma frase seguida
+            do {
+                novaFrase = frases[Math.floor(Math.random() * frases.length)];
+            } while (novaFrase === display.innerText);
+
+            display.innerText = novaFrase;
+        }
+    </script>
+</body>
+
+</html>
